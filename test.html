@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <style>
+            table{
+                    border:5px solid darkblue;
+                    text-align:center;
+                    border-collapse:collapse; 
+                    margin-left: auto; 
+                    margin-right: auto; 
+                    width: 80%
+                    }
+            
+            tr td {
+                border:5px solid darkblue;
+                background-color: blueviolet; 
+                vertical-align: middle;
+                padding: 30px;
+                }
+            
+            tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even){
+                background-color: yellowgreen;
+                }
+            
+            tr td#header{
+                background-color: red;
+            }
+            
+        </style>
+   </head>
+<body>
+	<div id="rep"></div>
+    <button onclick=mul_table()>Click me</button>
+    <script>
+        function mul_table(){
+        var result = '<td id="header">' +'x' + "</td>";
+            for (var i = 0; i < 11; i++) {
+
+                for (var j = 0; j < 11; j++) {
+
+                    if(i == 0 && j > 0){
+                        result += '<td id="header">' + '[' + j + ']' + '</td>';
+                    } 
+                    else if(j == 0 && i>0){
+                        result += '<td id="header">' +'[' + i + ']' + '</td>';
+                    } 
+                    else if(i>0 && j>0){
+                        result += '<td>' + (i*j) + '</td>';
+                    }
+                }
+                result = "<tr>" + result + '</tr>'
+            }
+            result = '<table>' + result + "</table>"
+            document.getElementById("rep").innerHTML = result
+        }
+
+console.log(result);
+</script>
+</body>
+
+</html>

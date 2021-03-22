@@ -10,25 +10,44 @@
         <title>Multiplication Table</title>
    </head>
 <body>
-	<div class="container w-75">
-        <!-- The title and the input -->
-        <h1 class="text-center my-5">The Multiplication Table Challenge</h1>
+	
         <div id="input" class="text-center my-3">
             <span>Size:</span>
             <input type="text" id="size" name="size">
             <button id="create" class="btn btn-outline-dark btn-sm" onclick=mul_table()>Create Table!</button>
         </div>
-        <div id="alert">
-            <!-- Insert alert here if needed -->
-        </div>
-        <div id="mul_table" class="text-center">
-            
-        </div>
-        <div>
-            <h1 class="countDown text-center my-3"></h1>
-        </div>
+        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // $('#size').keyup(function(){
+        //     console.log($(this).val());
+        // })    
+    
+        var tab_input = [];
+        var count = 10;
+        var timer = setInterval(function(){
+        count = count - 1;
+        if (count === 0){
+            clearInterval(timer);
+          }
+        $(".countDown").html(count + " SECONDS LEFT");
+        $('#test').keyup(function(){
+            console.log($(this).val());
+            tab_input.push($(this).val());
+        })
+        console.log(tab_input);
+        console.log(tab_input[tab_input.length - 1] == 3);
+       }, 1000)
+
+        
+    
+    // var finalans = tab_input[tab_input.length - 1];
+    // if (finalans = correct_val){
+    //     isCorrect = true;
+    //     console.log(isCorrect)
+    // }
+    </script>
 </body>
 
 </html>

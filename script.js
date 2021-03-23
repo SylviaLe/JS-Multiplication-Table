@@ -8,6 +8,7 @@ function mul_table(){
         document.getElementById("alert").innerHTML = '<div class="alert alert-danger" role="alert">Please enter an integer smaller than 20</div>'
         return;
     }
+    $('#math_img').hide();
     var tab_index = 0;
     var result = '<td id="header">' +'x' + "</td>";
     for (var i = 0; i < n+1; i++) {
@@ -27,9 +28,9 @@ function mul_table(){
         }
         result = "<tr>" + result + '</tr>'
     }
-    result = '<table>' + result + "</table>"
+    result = '<table id="mul_table">' + result + "</table>"
 
-    document.getElementById("mul_table").innerHTML = result
+    $('#math_img').after(result);
     var ran_cell = (Math.floor(Math.random() * Math.pow(n, 2))).toString();
     var correct = document.getElementById("t"+ran_cell);
     var correct_val = parseInt(correct.innerText);
@@ -66,6 +67,7 @@ function mul_table(){
         if (count === 0){
             clearInterval(tabletimer);
             $("#mul_table" ).hide();
+            $('#math_img').show();
             $(".countDown").hide();
 
             var finalans = tab_input[tab_input.length - 1];

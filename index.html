@@ -1,53 +1,52 @@
+<!-- 
+    Sylvia Le, Adham Khalifa, Alexander Jutt
+    PA03
+    index.html
+    Create an interactive multiplication table out of user input
+ -->
+
 <!DOCTYPE html>
 <html>
 	<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Link to CDNs and stylesheet -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" />
         <link rel="stylesheet" href="style.css" >
         <title>Multiplication Table</title>
    </head>
+
+
 <body>
-	
+	<div class="container w-75">
+        
+        <!-- The title and the input -->
+        <h1 class="text-center my-5">The Multiplication Table Challenge</h1>
         <div id="input" class="text-center my-3">
             <span>Size:</span>
             <input type="text" id="size" name="size">
             <button id="create" class="btn btn-outline-dark btn-sm" onclick=mul_table()>Create Table!</button>
         </div>
-        
+
+        <!-- Placeholder for alerts -->
+        <div id="alert">
+        </div>
+
+        <!-- The image, will be hidden when the table is ready -->
+        <div class="text-center">
+            <img src='bg.jpg' id='math_img'>
+        </div>
+
+        <!-- The timer notification -->
+        <div>
+            <h3 class="countDown text-center my-3"></h3>
+        </div>
+
+    <!-- Link to stylesheet and jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
-    <script>
-        // $('#size').keyup(function(){
-        //     console.log($(this).val());
-        // })    
-    
-        var tab_input = [];
-        var count = 10;
-        var timer = setInterval(function(){
-        count = count - 1;
-        if (count === 0){
-            clearInterval(timer);
-          }
-        $(".countDown").html(count + " SECONDS LEFT");
-        $('#test').keyup(function(){
-            console.log($(this).val());
-            tab_input.push($(this).val());
-        })
-        console.log(tab_input);
-        console.log(tab_input[tab_input.length - 1] == 3);
-       }, 1000)
-
-        
-    
-    // var finalans = tab_input[tab_input.length - 1];
-    // if (finalans = correct_val){
-    //     isCorrect = true;
-    //     console.log(isCorrect)
-    // }
-    </script>
 </body>
 
 </html>

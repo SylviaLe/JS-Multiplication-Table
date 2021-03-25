@@ -1,11 +1,24 @@
+/* 
+Sylvia Le, Adham Khalifa, Alexander Jutt
+PA03
+style.css
+Custom stylesheet
+*/
+
+
+/* Remove border for the main input box */
 input{
     border-top:none;
     border-left:0;
     border-right:0;
 }
+
+/* Make the button rounded */
 button#create{
     border-radius: 40px !important; 
 }
+
+/* Styling the table: alignment, border and width */
 table{
     border:2px solid #0F110C;
     text-align:center;
@@ -14,12 +27,16 @@ table{
     margin-right: auto; 
     width: 75%
     }
+
+/* Styling the table cell border and padding */
 tr td {
     border:2px solid #0F110C;
     vertical-align: middle;
-    padding: 20px;
+    padding: 5px;
     }
 
+
+/* Make a checkboard pattern and alternate the color every 2 sec */
 tr:nth-child(even) td:nth-child(even), tr:nth-child(odd) td:nth-child(odd){
     background-color: #9D6381;
     transition: background-color 4s;
@@ -40,10 +57,12 @@ tr:nth-child(even) td:nth-child(odd).change, tr:nth-child(odd) td:nth-child(even
     background-color: #9D6381;
 }
 
+/* Make a different color for the first row and col */
 td#header{
     background-color: #8ACDEA;
     }
 
+/* Style the input box inside the table cell, which need to be narrower */
 input#test{
     width: 30px;
     margin: auto;
